@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="228" viewBox="0 0 470 228" role="img" aria-label="Heart Disease Prediction API — FastAPI · scikit-learn · Docker">
+<defs>
+<linearGradient id="s02" x1="0" y1="0" x2="0.4" y2="1">
+<stop offset="0" stop-color="#1d1119"/><stop offset="1" stop-color="#120c13"/>
+</linearGradient>
+<linearGradient id="e02" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#ff4d9d" stop-opacity=".85"/>
+<stop offset=".55" stop-color="#ff4d9d" stop-opacity=".35"/>
+<stop offset="1" stop-color="#ff4d9d" stop-opacity=".55"/>
+</linearGradient>
+<linearGradient id="t02" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+<stop offset=".6" stop-color="#ffffff" stop-opacity=".04"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<filter id="l02" x="-10%" y="-10%" width="125%" height="130%">
+<feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#ff2b86" flood-opacity=".26"/>
+</filter>
+</defs>
+
+<!-- depth: offset layers stacked under the panel. Mid-tone magenta so the
+     lift reads on GitHub's dark theme and its light theme alike. -->
+<rect x="13" y="15" width="454" height="196" rx="12" fill="#360c22"/>
+<rect x="7" y="8" width="454" height="196" rx="12" fill="#ff4d9d" opacity=".22"/>
+
+<!-- panel -->
+<rect x="1" y="1" width="454" height="196" rx="12" fill="url(#s02)"
+      stroke="url(#e02)" stroke-width="1.5" filter="url(#l02)"/>
+<path d="M13 2 H443 A11 11 0 0 1 453 13" fill="none" stroke="url(#t02)"
+      stroke-width="1.5"/>
+
+<g font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace">
+  <text x="28" y="40" font-size="11.5" fill="#ff4d9d" letter-spacing="2.5">02</text>
+  <line x1="54" y1="36" x2="426" y2="36" stroke="#ff4d9d" opacity=".18"/>
+
+  <text x="28" y="76" font-size="18" font-weight="600" fill="#f4f7fb">Heart Disease Prediction API</text>
+  <text x="28" y="97" font-size="10.5" fill="#6b7688">Niloy-Bhuiyan/heart-disease-fastapi</text>
+
+  <text x="28" y="130" font-size="12.5" fill="#9ba6b9">Trained classifier served behind a REST endpoint,</text>
+  <text x="28" y="148" font-size="12.5" fill="#9ba6b9">containerised and deployed.</text>
+
+  <line x1="28" y1="166" x2="426" y2="166" stroke="#ff4d9d" opacity=".14"/>
+  <text x="28" y="185" font-size="11.5" fill="#f778ba" letter-spacing=".6">FastAPI · scikit-learn · Docker</text>
+</g>
+</svg>
