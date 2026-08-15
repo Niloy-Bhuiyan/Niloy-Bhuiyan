@@ -1,0 +1,5 @@
+# the portrait source stays local; only the generated SVG is published
+profile.png
+_build/
+_research/
+.claude/

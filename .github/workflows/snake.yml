@@ -1,0 +1,35 @@
+name: contribution snake
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: generate snake svg from the contribution grid
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-dark.svg?palette=github-dark&color_snake=#ff4d9d&color_dots=#161b22,#4a1230,#7c2148,#c9337a,#ff4d9d
+            dist/snake-light.svg?color_snake=#e3186f&color_dots=#ebedf0,#ffd6ea,#ff9dc7,#ff69ae,#e3186f
+
+      - name: push the result to the output branch
+        uses: crazy-max/ghaction-github-pages@v5.0.0
+        with:
+          target_branch: output
+          build_dir: dist
+          committer: Niloy Bhuiyan <145592285+Niloy-Bhuiyan@users.noreply.github.com>
+          author: Niloy Bhuiyan <145592285+Niloy-Bhuiyan@users.noreply.github.com>
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
