@@ -3,3 +3,6 @@ profile.png
 _build/
 _research/
 .claude/
+dist/
+__pycache__/
+*.pyc

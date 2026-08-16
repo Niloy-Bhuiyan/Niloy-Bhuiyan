@@ -10,11 +10,7 @@
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Niloy-Bhuiyan/Niloy-Bhuiyan/output/snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Niloy-Bhuiyan/Niloy-Bhuiyan/output/snake-light.svg">
-  <img src="https://raw.githubusercontent.com/Niloy-Bhuiyan/Niloy-Bhuiyan/output/snake-dark.svg" width="100%" alt="Snake eating the contribution grid">
-</picture>
+<img src="https://raw.githubusercontent.com/Niloy-Bhuiyan/Niloy-Bhuiyan/output/contributions.svg" width="100%" alt="Contribution calendar for the last year, with a snake eating the grid">
 
 </div>
 
