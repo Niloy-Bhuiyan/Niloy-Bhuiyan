@@ -1,46 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="470" height="228" viewBox="0 0 470 228" role="img" aria-label="Heart Disease Prediction API — FastAPI · scikit-learn · Docker">
-<defs>
-<linearGradient id="s02" x1="0" y1="0" x2="0.4" y2="1">
-<stop offset="0" stop-color="#1c1c21"/><stop offset="1" stop-color="#141417"/>
-</linearGradient>
-<linearGradient id="e02" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0" stop-color="#e8a33d" stop-opacity=".55"/>
-<stop offset=".5" stop-color="#5c5c66" stop-opacity=".5"/>
-<stop offset="1" stop-color="#4a4a52" stop-opacity=".8"/>
-</linearGradient>
-<linearGradient id="t02" x1="0" y1="0" x2="1" y2="0">
-<stop offset="0" stop-color="#ffffff" stop-opacity=".20"/>
-<stop offset=".6" stop-color="#ffffff" stop-opacity=".04"/>
-<stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-</linearGradient>
-<filter id="l02" x="-10%" y="-10%" width="125%" height="130%">
-<feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity=".55"/>
-</filter>
-</defs>
-
-<!-- depth: offset layers stacked under the panel, lightening as they approach
-     it. Mid-tone graphite so the lift reads on GitHub's dark theme (lighter
-     than the page) and its light theme (darker than the page) alike. -->
-<rect x="13" y="15" width="454" height="196" rx="12" fill="#2f2f36"/>
-<rect x="7" y="8" width="454" height="196" rx="12" fill="#45454f"/>
-
-<!-- panel -->
-<rect x="1" y="1" width="454" height="196" rx="12" fill="url(#s02)"
-      stroke="url(#e02)" stroke-width="1.5" filter="url(#l02)"/>
-<path d="M13 2 H443 A11 11 0 0 1 453 13" fill="none" stroke="url(#t02)"
-      stroke-width="1.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="142" viewBox="0 0 470 142" role="img" aria-label="heart-disease-fastapi — Trained classifier served behind a REST endpoint, containerised and deployed.">
+<rect x="0.5" y="0.5" width="469" height="141" rx="6" fill="#0d1117" stroke="#30363d"/>
 
 <g font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace">
-  <text x="28" y="40" font-size="11.5" fill="#e8a33d" letter-spacing="2.5">02</text>
-  <line x1="54" y1="36" x2="426" y2="36" stroke="#e8a33d" opacity=".22"/>
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z" transform="translate(20, 24)" fill="#7d8590"/>
+  <text x="44" y="36" font-size="13.5" font-weight="600" fill="#2f81f7">heart-disease-fastapi</text>
+  <rect x="223.1" y="23" width="51.8" height="19" rx="9.5" fill="none" stroke="#30363d"/>
+  <text x="249.0" y="36" font-size="10.5" fill="#7d8590"
+        text-anchor="middle">Public</text>
 
-  <text x="28" y="76" font-size="18" font-weight="600" fill="#e9e1d1">Heart Disease Prediction API</text>
-  <text x="28" y="97" font-size="10.5" fill="#8b8578">Niloy-Bhuiyan/heart-disease-fastapi</text>
+  <text x="20" y="72" font-size="12" fill="#7d8590">Trained classifier served behind a REST endpoint,</text>
+  <text x="20" y="90" font-size="12" fill="#7d8590">containerised and deployed.</text>
 
-  <text x="28" y="130" font-size="12.5" fill="#a7a091">Trained classifier served behind a REST endpoint,</text>
-  <text x="28" y="148" font-size="12.5" fill="#a7a091">containerised and deployed.</text>
-
-  <line x1="28" y1="166" x2="426" y2="166" stroke="#ffffff" opacity=".09"/>
-  <text x="28" y="185" font-size="11.5" fill="#8ec07c" letter-spacing=".6">FastAPI · scikit-learn · Docker</text>
+  <circle cx="25" cy="114" r="5" fill="#3572A5"/>
+  <text x="35" y="118" font-size="11" fill="#7d8590">Python</text>
+  <text x="92.6" y="118" font-size="11" fill="#7d8590">FastAPI · Docker</text>
 </g>
 </svg>
