@@ -14,7 +14,7 @@
 
 </div>
 
-### `$ ls ~/featured`
+### `$ ls ~/pinned`
 
 <p align="center"><a href="https://github.com/Niloy-Bhuiyan/CVPR"><img src="assets/projects/01.svg" width="48%" alt="SVHN Digit Classification — PyTorch, CNN, computer vision"></a><a href="https://github.com/Niloy-Bhuiyan/heart-disease-fastapi"><img src="assets/projects/02.svg" width="48%" alt="Heart Disease Prediction API — FastAPI, scikit-learn, Docker"></a></p>
 
