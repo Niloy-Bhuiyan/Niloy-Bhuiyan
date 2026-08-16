@@ -2,8 +2,8 @@
 
 Renders the real last-12-months grid with the count heading, month and weekday
 labels, the Less/More legend and a per-year totals line -- then runs a snake
-along a serpentine sweep, eating cells as it passes and regrowing them at the
-end of each loop.
+that hunts the cells with contributions, eating them as it reaches them and
+regrowing the grid at the end of each loop.
 """
 import datetime as dt
 import io
@@ -23,7 +23,6 @@ H = OY + ROWS * PITCH + 52
 EMPTY = "#1c1c21"
 LEVELS = [EMPTY, "#0e4429", "#006d32", "#26a641", "#39d353"]
 
-LOOP = 21.0                     # seconds per full sweep
 EAT_END = 0.86                  # fraction of the loop spent sweeping
 SNAKE_LEN = 4
 
@@ -57,12 +56,49 @@ def month_labels(first):
     return out
 
 
-def sweep_order():
-    """Serpentine path: left to right, drop a row, right to left."""
-    path = []
-    for row in range(ROWS):
-        cols = range(COLS) if row % 2 == 0 else range(COLS - 1, -1, -1)
-        path.extend((c, row) for c in cols)
+def _walk(a, b, horiz_first):
+    """Unit steps from a to b along an L, excluding a and including b."""
+    (x0, y0), (x1, y1) = a, b
+    out = []
+    if horiz_first:
+        legs = ((x0, x1, "x"), (y0, y1, "y"))
+    else:
+        legs = ((y0, y1, "y"), (x0, x1, "x"))
+    x, y = x0, y0
+    for start, end, axis in legs:
+        step = 1 if end >= start else -1
+        for v in range(start + step, end + step, step):
+            if axis == "x":
+                x = v
+            else:
+                y = v
+            out.append((x, y))
+    return out
+
+
+def snake_path(grid):
+    """A route that hunts the cells with contributions instead of mowing rows.
+
+    Nearest neighbour over the non-empty cells, joined by L-shaped moves that
+    alternate which axis leads, so the snake turns rather than sweeping. The
+    tour closes back on its start point so the loop is seamless.
+    """
+    targets = sorted(c for c, (level, _, _) in grid.items() if level > 0)
+    start = (0, 3)
+    if not targets:
+        return [start]
+
+    remaining, tour, cur = set(targets), [start], start
+    while remaining:
+        nxt = min(remaining, key=lambda c: (abs(c[0] - cur[0]) + abs(c[1] - cur[1]), c))
+        tour.append(nxt)
+        remaining.discard(nxt)
+        cur = nxt
+    tour.append(start)
+
+    path = [start]
+    for i in range(1, len(tour)):
+        path.extend(_walk(tour[i - 1], tour[i], horiz_first=(i % 2 == 1)))
     return path
 
 
@@ -72,9 +108,15 @@ def build():
     grid, first = layout(days)
     totals = contrib.year_totals()
 
-    path = sweep_order()
-    steps = len(path)
-    at = {cell: i for i, cell in enumerate(path)}
+    path = snake_path(grid)
+    cycle = path[:-1] if len(path) > 1 and path[-1] == path[0] else path
+    steps = len(cycle)
+
+    at = {}                                   # first moment the snake covers a cell
+    for i, cell in enumerate(cycle):
+        at.setdefault(cell, i)
+
+    loop = min(30.0, max(13.0, steps * 0.07))
 
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
@@ -102,32 +144,36 @@ def build():
     for (col, row), (level, count, d) in sorted(grid.items()):
         x, y = OX + col * PITCH, OY + row * PITCH
         base = LEVELS[level]
-        s = at[(col, row)] / steps
-        t_eat = EAT_END * s
-        k = [0.0, t_eat, min(t_eat + 0.006, 1.0), 0.90 + 0.075 * s]
-        k.append(min(k[3] + 0.015, 0.999))
-        k.append(1.0)
-        vals = f"{base};{base};{EMPTY};{EMPTY};{base};{base}"
-        keys = ";".join(f"{v:.4f}" for v in k)
+        visit = at.get((col, row))
+        s = (visit / steps) if visit is not None else None
+        if s is not None:
+            t_eat = EAT_END * s
+            k = [0.0, t_eat, min(t_eat + 0.006, 1.0), EAT_END + 0.03 + 0.045 * s]
+            k.append(min(k[3] + 0.015, 0.999))
+            k.append(1.0)
+            vals = f"{base};{base};{EMPTY};{EMPTY};{base};{base}"
+            keys = ";".join(f"{v:.4f}" for v in k)
         label = f"{count} contribution{'' if count == 1 else 's'} on {d:%b} {d.day}, {d.year}"
         out.append(
             f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2" fill="{base}">'
             f'<title>{esc(label)}</title>'
             + (
                 f'<animate attributeName="fill" values="{vals}" keyTimes="{keys}" '
-                f'dur="{LOOP}s" repeatCount="indefinite"/>'
-                if level > 0 else ""
+                f'dur="{loop}s" repeatCount="indefinite"/>'
+                if level > 0 and s is not None else ""
             )
             + "</rect>"
         )
 
     # snake -- head plus a short tail, each segment trailing by one step
-    pts = [(OX + c * PITCH, OY + r * PITCH) for c, r in path]
-    keytimes = ";".join(f"{EAT_END * i / (steps - 1):.5f}" for i in range(steps)) + ";1"
+    pts = [(OX + c * PITCH, OY + r * PITCH) for c, r in cycle]
+    # one key per position around the closed tour, then a hold while cells regrow
+    keytimes = ";".join(f"{EAT_END * i / steps:.5f}" for i in range(steps + 1)) + ";1"
 
     for seg in range(SNAKE_LEN, -1, -1):
         rot = pts[-seg:] + pts[:-seg] if seg else pts
-        vals = ";".join(f"{x},{y}" for x, y in rot) + f";{rot[-1][0]},{rot[-1][1]}"
+        closed = rot + [rot[0], rot[0]]
+        vals = ";".join(f"{x},{y}" for x, y in closed)
         # full-cell segments so the body reads as one snake, not a row of dots
         inset = -1 if seg == 0 else 0
         size = CELL - 2 * inset
@@ -136,7 +182,7 @@ def build():
             f'<g><rect x="{inset}" y="{inset}" width="{size:.1f}" height="{size:.1f}" '
             f'rx="3" fill="{AMBER}" opacity="{op:.2f}"/>'
             f'<animateTransform attributeName="transform" type="translate" '
-            f'values="{vals}" keyTimes="{keytimes}" dur="{LOOP}s" '
+            f'values="{vals}" keyTimes="{keytimes}" dur="{loop}s" '
             f'calcMode="linear" repeatCount="indefinite"/></g>'
         )
 
