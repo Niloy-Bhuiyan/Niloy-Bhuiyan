@@ -6,7 +6,7 @@
 
 </div>
 
-### `$ git log --oneline`
+### `$ contributions`
 
 <div align="center">
 
