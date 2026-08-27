@@ -1,4 +1,4 @@
-name: contribution calendar
+name: contribution visuals
 
 on:
   schedule:
@@ -24,6 +24,9 @@ jobs:
 
       - name: render the calendar from the live contribution graph
         run: python tools/gen_calendar.py dist/contributions.svg
+
+      - name: render the monthly activity chart from the same numbers
+        run: python tools/gen_activity.py dist/activity.svg
 
       # published to a side branch so the daily refresh never lands on main
       - name: push the result to the output branch
