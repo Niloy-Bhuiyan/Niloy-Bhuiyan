@@ -1,9 +1,13 @@
-"""Build the monthly activity chart.
+"""Build the recent activity chart.
 
 Replaces github-readme-activity-graph, which now answers 402 (the hosted service
 ran out of quota) and rendered as a broken image on the profile. Same idea, our
 own palette, and the numbers come from the same public contribution endpoint the
 calendar uses -- so the two visuals can never disagree.
+
+Window is the last three months, plotted a day at a time. Three monthly buckets
+would be three points, which is not a curve; daily resolution over a quarter is
+what actually shows the shape of the work.
 """
 import datetime as dt
 import io
@@ -13,6 +17,7 @@ import contrib
 from theme import AMBER, BG, BORDER, MONO, MUTED, TEXT, esc
 
 W, H = 900, 240
+DAYS = 92                       # the window, in days
 L, R = 52, 30                   # plot margins
 TOP, BOT = 62, 46
 PW = W - L - R
@@ -26,14 +31,25 @@ MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
-def monthly(days):
-    """-> [(date-of-first-of-month, total)] for the 12 months the grid covers."""
-    buckets = {}
-    for iso, _, count in days:
-        d = dt.date.fromisoformat(iso)
-        buckets[(d.year, d.month)] = buckets.get((d.year, d.month), 0) + count
-    keys = sorted(buckets)[-12:]
-    return [(dt.date(y, m, 1), buckets[(y, m)]) for y, m in keys]
+def recent(days):
+    """-> [(date, count)] for the last DAYS days, oldest first."""
+    return [(dt.date.fromisoformat(iso), count) for iso, _, count in days][-DAYS:]
+
+
+def month_ticks(series):
+    """Label the first of each month, plus the window's own start day.
+
+    The start label is dropped when a month boundary lands right after it,
+    since the two would print on top of each other.
+    """
+    out, seen = [], series[0][0].month
+    for i, (d, _) in enumerate(series):
+        if d.month != seen:
+            out.append((i, d))
+            seen = d.month
+    if not out or out[0][0] >= 8:
+        out.insert(0, (0, series[0][0]))
+    return out
 
 
 def nice_ceiling(v):
@@ -72,54 +88,59 @@ def spline(pts, tension=0.5):
 
 
 def build():
-    series = monthly(contrib.last_year())
+    series = recent(contrib.last_year())
     total = sum(c for _, c in series)
     peak = max(c for _, c in series)
+    peak_i = max(range(len(series)), key=lambda i: series[i][1])
     top = nice_ceiling(peak)
 
     n = len(series)
-    xs = [L + (PW * i / (n - 1)) for i in range(n)] if n > 1 else [L + PW / 2]
+    xs = [L + (PW * i / (n - 1)) for i in range(n)]
     ys = [TOP + PH - (PH * c / top) for _, c in series]
 
+    first, last = series[0][0], series[-1][0]
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-        f'role="img" aria-label="{total} contributions over the last twelve months, by month">',
+        f'role="img" aria-label="{total} contributions in the last three months, by day">',
         f'<rect width="{W}" height="{H}" rx="10" fill="{BG}" stroke="{BORDER}"/>',
         f'<defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{AREA}" stop-opacity="0.42"/>'
         f'<stop offset="1" stop-color="{AREA}" stop-opacity="0.02"/></linearGradient></defs>',
         f'<g font-family="{MONO}">',
         f'<text x="{L}" y="32" font-size="15" fill="{TEXT}">{total} contributions '
-        f'<tspan fill="{MUTED}">over the last twelve months</tspan></text>',
+        f'<tspan fill="{MUTED}">in the last three months</tspan></text>',
+        f'<text x="{W - R}" y="32" font-size="10.5" fill="{MUTED}" text-anchor="end">'
+        f'{MONTHS[first.month - 1]} {first.day} — {MONTHS[last.month - 1]} {last.day}</text>',
     ]
 
-    # horizontal gridlines, labelled on the left
     for i in range(5):
-        v = top * i / 4
         y = TOP + PH - (PH * i / 4)
         out.append(f'<line x1="{L}" y1="{y:.1f}" x2="{W - R}" y2="{y:.1f}" stroke="{GRID}"/>')
         out.append(f'<text x="{L - 10}" y="{y + 3.5:.1f}" font-size="9.5" fill="{MUTED}" '
-                   f'text-anchor="end">{int(v)}</text>')
+                   f'text-anchor="end">{int(top * i / 4)}</text>')
 
     line = spline(list(zip(xs, ys)))
     area = f"{line} L{xs[-1]:.1f},{TOP + PH} L{xs[0]:.1f},{TOP + PH} Z"
-
     out.append(f'<path d="{area}" fill="url(#fade)"/>')
     out.append(f'<path d="{line}" fill="none" stroke="{GREEN}" stroke-width="2" '
                f'stroke-linejoin="round" stroke-linecap="round"/>')
 
-    for (d, c), x, y in zip(series, xs, ys):
-        # the busiest month gets the amber dot, so the eye lands somewhere
-        colour = AMBER if c == peak else GREEN
-        out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.2" fill="{BG}" stroke="{colour}" '
-                   f'stroke-width="2"><title>{esc(f"{c} in {MONTHS[d.month - 1]} {d.year}")}'
-                   f'</title></circle>')
-        out.append(f'<text x="{x:.1f}" y="{TOP + PH + 22}" font-size="10" fill="{MUTED}" '
-                   f'text-anchor="middle">{MONTHS[d.month - 1]}</text>')
+    # a marker per day would be 92 dots; only the busiest one earns one
+    px, py = xs[peak_i], ys[peak_i]
+    pd = series[peak_i][0]
+    out.append(f'<line x1="{px:.1f}" y1="{py:.1f}" x2="{px:.1f}" y2="{TOP + PH}" '
+               f'stroke="{AMBER}" stroke-width="1" opacity="0.35"/>')
+    out.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3.6" fill="{BG}" stroke="{AMBER}" '
+               f'stroke-width="2"><title>{esc(f"{peak} on {MONTHS[pd.month - 1]} {pd.day}")}'
+               f'</title></circle>')
+    anchor = "end" if px > W / 2 else "start"
+    dx = -9 if anchor == "end" else 9
+    out.append(f'<text x="{px + dx:.1f}" y="{py - 9:.1f}" font-size="10" fill="{AMBER}" '
+               f'text-anchor="{anchor}">{peak} on {MONTHS[pd.month - 1]} {pd.day}</text>')
 
-    pd, _ = max(series, key=lambda s: s[1])
-    out.append(f'<text x="{W - R}" y="32" font-size="10.5" fill="{MUTED}" text-anchor="end">'
-               f'busiest <tspan fill="{AMBER}">{MONTHS[pd.month - 1]} {pd.year} · {peak}</tspan></text>')
+    for i, d in month_ticks(series):
+        out.append(f'<text x="{xs[i]:.1f}" y="{TOP + PH + 22}" font-size="10" fill="{MUTED}" '
+                   f'text-anchor="middle">{MONTHS[d.month - 1]} {d.day}</text>')
 
     out.append("</g></svg>")
     return "".join(out)
