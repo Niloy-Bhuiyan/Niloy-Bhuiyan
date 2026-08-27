@@ -16,9 +16,9 @@
 
 ### `$ ls ~/pinned`
 
-<p align="center"><a href="https://github.com/Niloy-Bhuiyan/CVPR"><img src="assets/projects/01.svg" width="48%" alt="SVHN Digit Classification — PyTorch, CNN, computer vision"></a><a href="https://github.com/Niloy-Bhuiyan/heart-disease-fastapi"><img src="assets/projects/02.svg" width="48%" alt="Heart Disease Prediction API — FastAPI, scikit-learn, Docker"></a></p>
+<p align="center"><a href="https://github.com/Niloy-Bhuiyan/shuru"><img src="assets/projects/01.svg" width="49%" alt="shuru — internship search for Bangladesh with calibrated shortlist odds"></a><a href="https://github.com/Niloy-Bhuiyan/Agent-Paw"><img src="assets/projects/02.svg" width="49%" alt="Agent-Paw — a pixel cat that lives on your desktop"></a></p>
 
-<p align="center"><a href="https://github.com/Niloy-Bhuiyan/ai-career-command-center"><img src="assets/projects/03.svg" width="48%" alt="AI Career Command Center — React, Gemini API, Vercel"></a><a href="https://github.com/Niloy-Bhuiyan/Programming-in-Python-FinalTerm"><img src="assets/projects/04.svg" width="48%" alt="Seoul Bike Demand Analysis — pandas, NumPy, Matplotlib"></a></p>
+<p align="center"><a href="https://github.com/Niloy-Bhuiyan/Switchyard"><img src="assets/projects/03.svg" width="49%" alt="Switchyard — a control room for several AI coding agents"></a><a href="https://github.com/Niloy-Bhuiyan/FirstPR"><img src="assets/projects/04.svg" width="49%" alt="FirstPR — ranks real open-source issues against what your code proves you know"></a></p>
 
 ### `$ cat ~/.stack`
 
@@ -32,24 +32,24 @@
 <br>
 <img src="https://img.shields.io/badge/FastAPI-0d0d0f?style=flat-square&logo=fastapi&logoColor=009688" alt="FastAPI">
 <img src="https://img.shields.io/badge/Docker-0d0d0f?style=flat-square&logo=docker&logoColor=2496ED" alt="Docker">
-<img src="https://img.shields.io/badge/JavaScript-0d0d0f?style=flat-square&logo=javascript&logoColor=F7DF1E" alt="JavaScript">
+<img src="https://img.shields.io/badge/TypeScript-0d0d0f?style=flat-square&logo=typescript&logoColor=3178C6" alt="TypeScript">
+<img src="https://img.shields.io/badge/Next.js-0d0d0f?style=flat-square&logo=nextdotjs&logoColor=E9E1D1" alt="Next.js">
 <img src="https://img.shields.io/badge/React-0d0d0f?style=flat-square&logo=react&logoColor=61DAFB" alt="React">
-<img src="https://img.shields.io/badge/Vite-0d0d0f?style=flat-square&logo=vite&logoColor=646CFF" alt="Vite">
+<img src="https://img.shields.io/badge/Supabase-0d0d0f?style=flat-square&logo=supabase&logoColor=3FCF8E" alt="Supabase">
 <img src="https://img.shields.io/badge/Git-0d0d0f?style=flat-square&logo=git&logoColor=F05032" alt="Git">
 </p>
 
-### `$ git log --graph`
+### `$ history --monthly`
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Niloy-Bhuiyan&bg_color=0d0d0f&color=e9e1d1&line=39d353&point=ffffff&area=true&area_color=26a641&title_color=39d353&hide_border=true&radius=8&custom_title=contribution%20activity" width="100%" alt="Contribution activity over the last months">
+<img src="https://raw.githubusercontent.com/Niloy-Bhuiyan/Niloy-Bhuiyan/output/activity.svg" width="100%" alt="Contributions per month over the last twelve months">
 
 </div>
 
 ### `$ contact`
 
 <p align="center">
-<a href="mailto:niloybhuiyann@gmail.com"><img src="https://img.shields.io/badge/email-0d0d0f?style=flat-square&logo=gmail&logoColor=E8A33D" alt="Email"></a>
-<a href="https://ai-career-command-center-wjku.vercel.app"><img src="https://img.shields.io/badge/career%20dashboard-0d0d0f?style=flat-square&logo=vercel&logoColor=E8A33D" alt="Live career dashboard"></a>
-<a href="https://heart-disease-fastapi-4rl5.onrender.com/docs"><img src="https://img.shields.io/badge/prediction%20api-0d0d0f?style=flat-square&logo=fastapi&logoColor=E8A33D" alt="Live prediction API"></a>
+<a href="mailto:niloybhuiyann@gmail.com"><img src="https://img.shields.io/badge/niloybhuiyann%40gmail.com-0d0d0f?style=flat-square&logo=gmail&logoColor=E8A33D" alt="niloybhuiyann@gmail.com"></a>
+<a href="https://agent-paw.vercel.app"><img src="https://img.shields.io/badge/agentpaw-live-0d0d0f?style=flat-square&logo=vercel&logoColor=E8A33D" alt="AgentPaw, live"></a>
 </p>
