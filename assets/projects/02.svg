@@ -1,21 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="470" height="164" viewBox="0 0 470 164" role="img" aria-label="heart-disease-fastapi — Trained classifier served behind a REST endpoint, containerised and deployed.">
-<g transform="translate(11, 6)">
-<rect x="0.5" y="0.5" width="447" height="151" rx="8"
-      fill="#0d1117" stroke="#30363d"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="490" height="186" viewBox="0 0 490 186" role="img" aria-label="Niloy-Bhuiyan/Agent-Paw — A pixel cat that lives on your desktop. Procedural sprites, a voice pipeline, a real Electron pet window.">
+<defs>
+  <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.6" fill="#ffffff" opacity="0.05"/>
+  </pattern>
+  <clipPath id="card"><rect width="468" height="172" rx="6"/></clipPath>
+</defs>
+<g transform="translate(11, 7)">
+
+<g clip-path="url(#card)">
+  <rect width="468" height="172" fill="#17171f"/>
+  <rect width="468" height="172" fill="url(#dots)"/>
+  <rect width="468" height="38" fill="#1f1f2a"/>
+  <text x="450" y="158" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="58"
+        font-weight="700" fill="#e8a33d" opacity="0.06" text-anchor="end">02</text>
+</g>
+<line x1="0" y1="38" x2="468" y2="38" stroke="#39394a"/>
+<path d="M9,20 V9 H20" fill="none" stroke="#e8a33d" stroke-width="1.4" opacity="0.62"/><path d="M9,152 V163 H20" fill="none" stroke="#e8a33d" stroke-width="1.4" opacity="0.62"/><path d="M459,20 V9 H448" fill="none" stroke="#e8a33d" stroke-width="1.4" opacity="0.62"/><path d="M459,152 V163 H448" fill="none" stroke="#e8a33d" stroke-width="1.4" opacity="0.62"/>
+<rect x="0.5" y="0.5" width="467" height="171" rx="6"
+      fill="none" stroke="#39394a"/>
 
 <g font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace">
-  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z" transform="translate(20, 20)" fill="#7d8590"/>
-  <text x="44" y="32" font-size="13.5" font-weight="600" fill="#2f81f7">heart-disease-fastapi</text>
-  <rect x="223.1" y="19" width="51.8" height="19" rx="9.5" fill="none" stroke="#30363d"/>
-  <text x="249.0" y="32" font-size="10.5" fill="#7d8590"
-        text-anchor="middle">Public</text>
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z" transform="translate(20, 11)" fill="#7a7468"/>
+  <text x="44" y="24" font-size="13.5" fill="#7a7468">Niloy-Bhuiyan/<tspan
+        font-weight="600" fill="#e8a33d">Agent-Paw</tspan></text>
+  <text x="448" y="23" font-size="8.5" fill="#6b6558" letter-spacing="1.7"
+        text-anchor="end">PUBLIC</text>
 
-  <text x="20" y="68" font-size="12" fill="#7d8590">Trained classifier served behind a REST endpoint,</text>
-  <text x="20" y="86" font-size="12" fill="#7d8590">containerised and deployed.</text>
+  <text x="20" y="68" font-size="12" fill="#9b9488">A pixel cat that lives on your desktop. Procedural</text>
+  <text x="20" y="86" font-size="12" fill="#9b9488">sprites, a voice pipeline, a real Electron pet window.</text>
 
-  <circle cx="25" cy="124" r="5" fill="#3572A5"/>
-  <text x="35" y="128" font-size="11" fill="#7d8590">Python</text>
-  <text x="92.6" y="128" font-size="11" fill="#7d8590">FastAPI · Docker</text>
+  <line x1="20" y1="100" x2="448" y2="100"
+        stroke="#2c2c38"/>
+
+  <text x="20" y="123" font-size="8.5" fill="#6b6558" letter-spacing="1.7">LANGS</text>
+  <g clip-path="url(#bar)"><rect x="74.00" y="116" width="364.28" height="7" fill="#3178c6"/><rect x="438.28" y="116" width="5.98" height="7" fill="#f1e05a"/><rect x="444.26" y="116" width="3.37" height="7" fill="#663399"/></g><clipPath id="bar"><rect x="74" y="116" width="374" height="7" rx="3.5"/></clipPath><circle cx="78.0" cy="144.5" r="4" fill="#3178c6"/><text x="88.0" y="148.0" font-size="10.5" fill="#7a7468">TypeScript 97.4%</text><circle cx="208.8" cy="144.5" r="4" fill="#f1e05a"/><text x="218.8" y="148.0" font-size="10.5" fill="#7a7468">JavaScript 1.6%</text><circle cx="333.3" cy="144.5" r="4" fill="#663399"/><text x="343.3" y="148.0" font-size="10.5" fill="#7a7468">CSS 0.9%</text>
 </g>
 </g>
 </svg>
