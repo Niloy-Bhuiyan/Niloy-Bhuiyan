@@ -16,7 +16,7 @@
 
 ### `$ ls ~/pinned`
 
-<p align="center"><a href="https://github.com/Niloy-Bhuiyan/shuru"><img src="assets/projects/01.svg?v=2" width="49%" alt="shuru — internship search for Bangladesh with calibrated shortlist odds"></a><a href="https://github.com/Niloy-Bhuiyan/Agent-Paw"><img src="assets/projects/02.svg?v=2" width="49%" alt="Agent-Paw — a pixel cat that lives on your desktop"></a></p>
+<p align="center"><a href="https://github.com/Niloy-Bhuiyan/shuru"><img src="assets/projects/01.svg?v=3" width="49%" alt="shuru — internship search for Bangladesh with calibrated shortlist odds"></a><a href="https://github.com/Niloy-Bhuiyan/Agent-Paw"><img src="assets/projects/02.svg?v=2" width="49%" alt="Agent-Paw — a pixel cat that lives on your desktop"></a></p>
 
 <p align="center"><a href="https://github.com/Niloy-Bhuiyan/Switchyard"><img src="assets/projects/03.svg?v=2" width="49%" alt="Switchyard — a control room for several AI coding agents"></a><a href="https://github.com/Niloy-Bhuiyan/FirstPR"><img src="assets/projects/04.svg?v=2" width="49%" alt="FirstPR — ranks real open-source issues against what your code proves you know"></a></p>
 
