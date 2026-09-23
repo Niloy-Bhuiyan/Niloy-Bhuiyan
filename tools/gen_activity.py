@@ -5,9 +5,9 @@ ran out of quota) and rendered as a broken image on the profile. Same idea, our
 own palette, and the numbers come from the same public contribution endpoint the
 calendar uses -- so the two visuals can never disagree.
 
-Window is the last three months, plotted a day at a time. Three monthly buckets
-would be three points, which is not a curve; daily resolution over a quarter is
-what actually shows the shape of the work.
+Window is the last twelve months, plotted a week at a time. A day at a time
+over a year is 365 points in 820px -- a comb of spikes, not a shape -- and twelve
+monthly buckets are too coarse to show when work started and stopped.
 """
 import datetime as dt
 import io
@@ -17,7 +17,7 @@ import contrib
 from theme import AMBER, BG, BORDER, MONO, MUTED, TEXT, esc
 
 W, H = 900, 240
-DAYS = 92                       # the window, in days
+DAYS = 364                      # the window: 52 whole weeks
 L, R = 52, 30                   # plot margins
 TOP, BOT = 62, 46
 PW = W - L - R
@@ -32,8 +32,13 @@ MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 
 
 def recent(days):
-    """-> [(date, count)] for the last DAYS days, oldest first."""
-    return [(dt.date.fromisoformat(iso), count) for iso, _, count in days][-DAYS:]
+    """-> [(week start, count)] for the last DAYS days, oldest first.
+
+    Weeks are counted back from the newest day, so the last point is always
+    the current week and never a half-filled one from the calendar grid.
+    """
+    daily = [(dt.date.fromisoformat(iso), count) for iso, _, count in days][-DAYS:]
+    return [(daily[i][0], sum(c for _, c in daily[i:i + 7])) for i in range(0, len(daily), 7)]
 
 
 def month_ticks(series):
@@ -47,9 +52,14 @@ def month_ticks(series):
         if d.month != seen:
             out.append((i, d))
             seen = d.month
-    if not out or out[0][0] >= 8:
+    if not out or out[0][0] >= 3:
         out.insert(0, (0, series[0][0]))
     return out
+
+
+def tick(d):
+    """Month name, with the year on January so the axis says where it turns over."""
+    return f"{MONTHS[d.month - 1]} ’{d.year % 100:02d}" if d.month == 1 else MONTHS[d.month - 1]
 
 
 def nice_ceiling(v):
@@ -98,19 +108,19 @@ def build():
     xs = [L + (PW * i / (n - 1)) for i in range(n)]
     ys = [TOP + PH - (PH * c / top) for _, c in series]
 
-    first, last = series[0][0], series[-1][0]
+    first, last = series[0][0], series[-1][0] + dt.timedelta(days=6)
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
-        f'role="img" aria-label="{total} contributions in the last three months, by day">',
+        f'role="img" aria-label="{total} contributions in the last twelve months, by week">',
         f'<rect width="{W}" height="{H}" rx="10" fill="{BG}" stroke="{BORDER}"/>',
         f'<defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">'
         f'<stop offset="0" stop-color="{AREA}" stop-opacity="0.42"/>'
         f'<stop offset="1" stop-color="{AREA}" stop-opacity="0.02"/></linearGradient></defs>',
         f'<g font-family="{MONO}">',
         f'<text x="{L}" y="32" font-size="15" fill="{TEXT}">{total} contributions '
-        f'<tspan fill="{MUTED}">in the last three months</tspan></text>',
+        f'<tspan fill="{MUTED}">in the last twelve months</tspan></text>',
         f'<text x="{W - R}" y="32" font-size="10.5" fill="{MUTED}" text-anchor="end">'
-        f'{MONTHS[first.month - 1]} {first.day} — {MONTHS[last.month - 1]} {last.day}</text>',
+        f'{MONTHS[first.month - 1]} {first.day}, {first.year} — {MONTHS[last.month - 1]} {last.day}, {last.year}</text>',
     ]
 
     for i in range(5):
@@ -125,22 +135,22 @@ def build():
     out.append(f'<path d="{line}" fill="none" stroke="{GREEN}" stroke-width="2" '
                f'stroke-linejoin="round" stroke-linecap="round"/>')
 
-    # a marker per day would be 92 dots; only the busiest one earns one
+    # a marker per week would be 52 dots; only the busiest one earns one
     px, py = xs[peak_i], ys[peak_i]
     pd = series[peak_i][0]
     out.append(f'<line x1="{px:.1f}" y1="{py:.1f}" x2="{px:.1f}" y2="{TOP + PH}" '
                f'stroke="{AMBER}" stroke-width="1" opacity="0.35"/>')
     out.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3.6" fill="{BG}" stroke="{AMBER}" '
-               f'stroke-width="2"><title>{esc(f"{peak} on {MONTHS[pd.month - 1]} {pd.day}")}'
+               f'stroke-width="2"><title>{esc(f"{peak} in the week of {MONTHS[pd.month - 1]} {pd.day}")}'
                f'</title></circle>')
     anchor = "end" if px > W / 2 else "start"
     dx = -9 if anchor == "end" else 9
     out.append(f'<text x="{px + dx:.1f}" y="{py - 9:.1f}" font-size="10" fill="{AMBER}" '
-               f'text-anchor="{anchor}">{peak} on {MONTHS[pd.month - 1]} {pd.day}</text>')
+               f'text-anchor="{anchor}">{peak} in the week of {MONTHS[pd.month - 1]} {pd.day}</text>')
 
     for i, d in month_ticks(series):
         out.append(f'<text x="{xs[i]:.1f}" y="{TOP + PH + 22}" font-size="10" fill="{MUTED}" '
-                   f'text-anchor="middle">{MONTHS[d.month - 1]} {d.day}</text>')
+                   f'text-anchor="middle">{tick(d)}</text>')
 
     out.append("</g></svg>")
     return "".join(out)

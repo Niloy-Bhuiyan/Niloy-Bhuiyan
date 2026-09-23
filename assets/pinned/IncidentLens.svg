@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240" role="img" aria-label="Niloy-Bhuiyan/IncidentLens: Investigates a broken deploy from its logs, code, commits and past incidents, and links every claim to the evidence. Hybrid retrieval: MRR 0.44 → 0.85.">
+<g transform="translate(8,8)">
+<defs>
+  <linearGradient id="bgp2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#18181d"/><stop offset="1" stop-color="#111114"/>
+  </linearGradient>
+  <linearGradient id="topp2" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4fc1b0"/><stop offset="0.55" stop-color="#4fc1b0" stop-opacity="0.25"/>
+    <stop offset="1" stop-color="#4fc1b0" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="glowp2" cx="1" cy="0" r="0.9">
+    <stop offset="0" stop-color="#4fc1b0" stop-opacity="0.13"/><stop offset="1" stop-color="#4fc1b0" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="clipp2"><rect width="464" height="224" rx="12"/></clipPath>
+</defs>
+<g clip-path="url(#clipp2)">
+  <rect width="464" height="224" fill="url(#bgp2)"/>
+  <rect width="464" height="224" fill="url(#glowp2)"/>
+  <rect width="464" height="2" fill="url(#topp2)"/>
+</g>
+<rect x="0.5" y="0.5" width="463" height="223" rx="11.5" fill="none" stroke="#2b2b33"/>
+<text x="22" y="34" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="9.5" fill="#4fc1b0" letter-spacing="1.5">INCIDENT RESPONSE · RAG</text><rect x="392" y="23" width="52" height="19" rx="9.5" fill="#3fb950" fill-opacity="0.12" stroke="#3fb950" stroke-opacity="0.4"/><circle cx="404" cy="32.5" r="3.2" fill="#3fb950"><animate attributeName="opacity" values="1;0.35;1" dur="2.2s" repeatCount="indefinite"/></circle><text x="413" y="36" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="10" font-weight="600" fill="#3fb950" letter-spacing="1.2">LIVE</text>
+<text x="22" y="68" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#f1eadc">IncidentLens</text>
+<text x="22" y="102" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="13" fill="#a49e92">Investigates a broken deploy from its logs, code,</text><text x="22" y="122" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="13" fill="#a49e92">commits and past incidents, and links every claim</text><text x="22" y="142" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="13" fill="#a49e92">to the evidence. Hybrid retrieval: MRR 0.44 → 0.85.</text>
+<line x1="22" y1="166" x2="442" y2="166" stroke="#24242b"/>
+<rect x="22.0" y="184" width="74.7" height="22" rx="6" fill="#1d1d23" stroke="#303039"/><text x="31.0" y="199" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="10.5" fill="#cdc5b6">LangGraph</text><rect x="103.7" y="184" width="68.4" height="22" rx="6" fill="#1d1d23" stroke="#303039"/><text x="112.7" y="199" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="10.5" fill="#cdc5b6">pgvector</text><rect x="179.1" y="184" width="62.1" height="22" rx="6" fill="#1d1d23" stroke="#303039"/><text x="188.1" y="199" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="10.5" fill="#cdc5b6">FastAPI</text><rect x="248.2" y="184" width="62.1" height="22" rx="6" fill="#1d1d23" stroke="#303039"/><text x="257.2" y="199" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="10.5" fill="#cdc5b6">Next.js</text><text x="442" y="199" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="11" fill="#4fc1b0" text-anchor="end">32-case eval</text>
+</g>
+</svg>

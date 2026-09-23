@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="assets/terminal-hero.svg" alt="niloy@github — ASCII portrait and stack summary" width="100%">
+<img src="assets/terminal-hero.svg?v=2" alt="niloy@github — ASCII portrait and stack summary" width="100%">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&pause=900&duration=3000&color=E8A33D&center=true&vCenter=true&width=580&height=30&lines=AI+%2F+ML+engineering;Deep+learning+with+PyTorch;LLM-backed+applications;Models+served+with+FastAPI+%2B+Docker" alt="AI / ML engineering · Deep learning with PyTorch · LLM-backed applications · Models served with FastAPI + Docker">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=15&pause=900&duration=3000&color=E8A33D&center=true&vCenter=true&width=620&height=30&lines=AI+systems+that+show+their+evidence;RAG+that+cites+its+sources+or+abstains;Agents+that+wait+for+human+approval;Tested%2C+evaluated%2C+deployed" alt="AI systems that show their evidence · RAG that cites its sources or abstains · Agents that wait for human approval · Tested, evaluated, deployed">
 
 </div>
 
@@ -16,40 +16,46 @@
 
 ### `$ ls ~/pinned`
 
-<p align="center"><a href="https://github.com/Niloy-Bhuiyan/shuru"><img src="assets/projects/01.svg?v=3" width="49%" alt="shuru — internship search for Bangladesh with calibrated shortlist odds"></a><a href="https://github.com/Niloy-Bhuiyan/Agent-Paw"><img src="assets/projects/02.svg?v=2" width="49%" alt="Agent-Paw — a pixel cat that lives on your desktop"></a></p>
+<p align="center"><a href="https://github.com/Niloy-Bhuiyan/countersign"><img src="assets/pinned/countersign.svg" width="49%" alt="countersign — invoice-to-payment reconciliation with an agent that recommends but never pays"></a> <a href="https://github.com/Niloy-Bhuiyan/IncidentLens"><img src="assets/pinned/IncidentLens.svg" width="49%" alt="IncidentLens — evidence-first incident investigation"></a>
+<a href="https://github.com/Niloy-Bhuiyan/aegis-incident-commander"><img src="assets/pinned/aegis-incident-commander.svg" width="49%" alt="aegis-incident-commander — root-cause analysis that holds every fix for human approval"></a> <a href="https://github.com/Niloy-Bhuiyan/shuru"><img src="assets/pinned/shuru.svg" width="49%" alt="shuru — internship platform for Bangladesh with a cite-or-abstain RAG service"></a>
+<a href="https://github.com/Niloy-Bhuiyan/ScopeForce"><img src="assets/pinned/ScopeForce.svg" width="49%" alt="ScopeForce — traces a product idea through requirements, code and tests"></a> <a href="https://github.com/Niloy-Bhuiyan/FirstPR"><img src="assets/pinned/FirstPR.svg" width="49%" alt="FirstPR — ranks real open-source issues against what your code proves you know"></a></p>
 
-<p align="center"><a href="https://github.com/Niloy-Bhuiyan/Switchyard"><img src="assets/projects/03.svg?v=2" width="49%" alt="Switchyard — a control room for several AI coding agents"></a><a href="https://github.com/Niloy-Bhuiyan/FirstPR"><img src="assets/projects/04.svg?v=2" width="49%" alt="FirstPR — ranks real open-source issues against what your code proves you know"></a></p>
+### `$ ls ~/research`
+
+<p align="center"><a href="https://github.com/Niloy-Bhuiyan/bias-graph-tomography"><img src="assets/research/bias-graph-tomography.svg" width="32.5%" alt="bias-graph-tomography — finding the faulty measurement in UWB-TDOA localization"></a> <a href="https://github.com/Niloy-Bhuiyan/shadowguard-cert"><img src="assets/research/shadowguard-cert.svg" width="32.5%" alt="shadowguard-cert — certified robustness to telemetry outage in IoT intrusion detection"></a> <a href="https://github.com/Niloy-Bhuiyan/bangla-cal"><img src="assets/research/bangla-cal.svg" width="32.5%" alt="bangla-cal — Bengali LLM calibration and hallucination benchmark"></a></p>
+
+### `$ open ~/live`
+
+<p align="center"><a href="https://countersign-zeta.vercel.app"><img src="assets/live/countersign.svg" width="32.5%" alt="countersign, live"></a> <a href="https://incidentlens-nine.vercel.app"><img src="assets/live/incidentlens.svg" width="32.5%" alt="IncidentLens, live"></a> <a href="https://scopeforce.vercel.app"><img src="assets/live/scopeforce.svg" width="32.5%" alt="ScopeForce, live"></a>
+<a href="https://shuru-ten.vercel.app"><img src="assets/live/shuru.svg" width="32.5%" alt="shuru, live"></a> <a href="https://agent-paw.vercel.app"><img src="assets/live/agentpaw.svg" width="32.5%" alt="AgentPaw, live"></a> <a href="https://niloy-bhuiyan.github.io/bias-graph-tomography/"><img src="assets/live/bias-graph-tomography.svg" width="32.5%" alt="Bias-Graph Tomography interactive demo, live"></a></p>
 
 ### `$ cat ~/.stack`
 
-<p align="center">
-<img src="https://img.shields.io/badge/Python-0d0d0f?style=flat-square&logo=python&logoColor=3776AB" alt="Python">
-<img src="https://img.shields.io/badge/PyTorch-0d0d0f?style=flat-square&logo=pytorch&logoColor=EE4C2C" alt="PyTorch">
-<img src="https://img.shields.io/badge/scikit--learn-0d0d0f?style=flat-square&logo=scikitlearn&logoColor=F7931E" alt="scikit-learn">
-<img src="https://img.shields.io/badge/pandas-0d0d0f?style=flat-square&logo=pandas&logoColor=C7D2E5" alt="pandas">
-<img src="https://img.shields.io/badge/NumPy-0d0d0f?style=flat-square&logo=numpy&logoColor=4DABCF" alt="NumPy">
-<img src="https://img.shields.io/badge/Jupyter-0d0d0f?style=flat-square&logo=jupyter&logoColor=F37626" alt="Jupyter">
-<br>
-<img src="https://img.shields.io/badge/FastAPI-0d0d0f?style=flat-square&logo=fastapi&logoColor=009688" alt="FastAPI">
-<img src="https://img.shields.io/badge/Docker-0d0d0f?style=flat-square&logo=docker&logoColor=2496ED" alt="Docker">
-<img src="https://img.shields.io/badge/TypeScript-0d0d0f?style=flat-square&logo=typescript&logoColor=3178C6" alt="TypeScript">
-<img src="https://img.shields.io/badge/Next.js-0d0d0f?style=flat-square&logo=nextdotjs&logoColor=E9E1D1" alt="Next.js">
-<img src="https://img.shields.io/badge/React-0d0d0f?style=flat-square&logo=react&logoColor=61DAFB" alt="React">
-<img src="https://img.shields.io/badge/Supabase-0d0d0f?style=flat-square&logo=supabase&logoColor=3FCF8E" alt="Supabase">
-<img src="https://img.shields.io/badge/Git-0d0d0f?style=flat-square&logo=git&logoColor=F05032" alt="Git">
-</p>
+<div align="center">
 
-### `$ history --monthly`
+<img src="assets/stack.svg" width="100%" alt="Stack — Python, TypeScript, SQL; LangGraph, LangChain, pgvector, Claude, Gemini, OpenAI; PyTorch, scikit-learn, NumPy, pandas, Jupyter; FastAPI, Pydantic, SQLAlchemy, PostgreSQL, Supabase, n8n; Next.js, React, Tailwind, Vite, Electron; Docker, GitHub Actions, Vercel, pytest, Vitest, Git">
+
+</div>
+
+### `$ history --weekly`
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Niloy-Bhuiyan/Niloy-Bhuiyan/output/activity.svg" width="100%" alt="Contributions per month over the last twelve months">
+<img src="https://raw.githubusercontent.com/Niloy-Bhuiyan/Niloy-Bhuiyan/output/activity.svg" width="100%" alt="Contributions per week over the last twelve months">
 
 </div>
+
+### `$ ls ~/more`
+
+- [**ResearchOS**](https://github.com/Niloy-Bhuiyan/thesis-research-orchestrator) — watches long Kaggle training runs, fixes the safe failures itself and asks on Telegram before anything else
+- [**leadbridge**](https://github.com/Niloy-Bhuiyan/leadbridge) — lead intake, AI triage, CRM upsert and an SEO audit, orchestrated in n8n over a tested Python service (127 tests)
+- [**Switchyard**](https://github.com/Niloy-Bhuiyan/Switchyard) — control room for several AI coding agents; branches shadow-merge before they collide
+- [**Agent-Paw**](https://github.com/Niloy-Bhuiyan/Agent-Paw) — a pixel cat that lives on your desktop, with a voice pipeline and a real Electron pet window
+- [**heart-disease-fastapi**](https://github.com/Niloy-Bhuiyan/heart-disease-fastapi) — a scikit-learn classifier served through a documented FastAPI endpoint, in Docker
 
 ### `$ contact`
 
 <p align="center">
 <a href="mailto:niloybhuiyann@gmail.com"><img src="https://img.shields.io/badge/niloybhuiyann%40gmail.com-0d0d0f?style=flat-square&logo=gmail&logoColor=E8A33D" alt="niloybhuiyann@gmail.com"></a>
-<a href="https://agent-paw.vercel.app"><img src="https://img.shields.io/badge/agentpaw-live-0d0d0f?style=flat-square&logo=vercel&logoColor=E8A33D" alt="AgentPaw, live"></a>
+<a href="https://github.com/Niloy-Bhuiyan?tab=repositories"><img src="https://img.shields.io/badge/all%20repositories-0d0d0f?style=flat-square&logo=github&logoColor=E9E1D1" alt="All repositories"></a>
 </p>

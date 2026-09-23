@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="240" viewBox="0 0 320 240" role="img" aria-label="Niloy-Bhuiyan/shadowguard-cert: IoT intrusion detection whose prediction is provably unchanged by whatever fills failed telemetry.">
+<g transform="translate(8,8)">
+<defs>
+  <linearGradient id="bgr2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#18181d"/><stop offset="1" stop-color="#111114"/>
+  </linearGradient>
+  <linearGradient id="topr2" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#f07a5f"/><stop offset="0.55" stop-color="#f07a5f" stop-opacity="0.25"/>
+    <stop offset="1" stop-color="#f07a5f" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="glowr2" cx="1" cy="0" r="0.9">
+    <stop offset="0" stop-color="#f07a5f" stop-opacity="0.13"/><stop offset="1" stop-color="#f07a5f" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="clipr2"><rect width="304" height="224" rx="12"/></clipPath>
+</defs>
+<g clip-path="url(#clipr2)">
+  <rect width="304" height="224" fill="url(#bgr2)"/>
+  <rect width="304" height="224" fill="url(#glowr2)"/>
+  <rect width="304" height="2" fill="url(#topr2)"/>
+</g>
+<rect x="0.5" y="0.5" width="303" height="223" rx="11.5" fill="none" stroke="#2b2b33"/>
+<text x="20" y="34" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="9.5" fill="#f07a5f" letter-spacing="1.5">PAPER · IOT SECURITY</text>
+<text x="20" y="68" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="19" font-weight="600" fill="#f1eadc">shadowguard-cert</text>
+<text x="20" y="102" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="13" fill="#a49e92">IoT intrusion detection whose</text><text x="20" y="122" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="13" fill="#a49e92">prediction is provably unchanged by</text><text x="20" y="142" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif" font-size="13" fill="#a49e92">whatever fills failed telemetry.</text>
+<line x1="20" y1="166" x2="284" y2="166" stroke="#24242b"/>
+<rect x="20.0" y="186" width="55.8" height="22" rx="6" fill="#1d1d23" stroke="#303039"/><text x="29.0" y="201" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="10.5" fill="#cdc5b6">Python</text><rect x="82.8" y="186" width="49.5" height="22" rx="6" fill="#1d1d23" stroke="#303039"/><text x="91.8" y="201" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="10.5" fill="#cdc5b6">NumPy</text><rect x="139.3" y="186" width="81.0" height="22" rx="6" fill="#1d1d23" stroke="#303039"/><text x="148.3" y="201" font-family="ui-monospace,'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="10.5" fill="#cdc5b6">CICIoT2023</text>
+</g>
+</svg>
